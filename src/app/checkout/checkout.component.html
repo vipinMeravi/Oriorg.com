@@ -1,0 +1,66 @@
+<section id="cart_items">
+	<div class="container">
+		<div class="breadcrumbs">
+			<ol class="breadcrumb">
+				<li><a href="#">Home</a></li>
+				<li class="active">Check out</li>
+			</ol>
+		</div>
+		<!--/breadcrums-->
+
+		<div class="shopper-informations">
+			<div class="row">
+				<div class="col-sm-5 clearfix" style="border: 1px solid #FE980F;">
+					<div class="bill-to" style="margin-left: 10%;">
+						<h4>Shipping Details</h4>
+						<div class="form-one">
+							<form ngNativeValidate #userDetails="ngForm" (ngSubmit)="onClickSubmit(userDetails.value)">
+								<input required pattern="[a-zA-Z ]*" title="Only alphabates are allowed" minlength="2"
+									type="text" name="nm" placeholder="Enter Full Name *" [(ngModel)]="nm">
+								<input required minlength="5" type="text" name="address1"
+									placeholder="Address line (1) *" [(ngModel)]="address1">
+								<input required minlength="5" type="text" name="address2"
+									placeholder="Address line (2) *" [(ngModel)]="address2">
+								<input required minlength="6" maxlength="6" type="text" name="pincode"
+									placeholder="PINCODE*" [(ngModel)]="pincode">
+								<!-- <select required class='form-control'  (change)="ChangingValue($event)" placeholder="PINCODE*" [(ngModel)]="pincode" name="pincode">
+									<option selected="selected" >PINCODE*</option>
+									<option value='452001'>452001</option>
+									<option value='452002'>452002</option>
+									<option value='452003'>452003</option>
+									<option value='452004'>452004</option>
+									<option value='452005'>452005</option>
+									<option value='452006'>452006</option>
+									<option value='452008'>452008</option>
+									<option value='452009'>452009</option>
+								</select> -->
+								<input required minlength="10" maxlength="10" pattern="[0-9]*" type="text" name="phone"
+									placeholder="Phone *" [(ngModel)]="phone">
+								<input type="text" minlength="10" maxlength="11" pattern="[0-9]*" name="alterPhone"
+									placeholder="Alternate Number (Optional)" [(ngModel)]="alterPhone">
+								<input required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+									name="email" placeholder="Email *" [(ngModel)]="email">
+								<input style="background-color: #FE980F;" type="submit" value="Payment">
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+
+					<div class="total_area" style="border: 1px solid #FE980F;">
+						<h4 style="margin-left: 12%;">Billing Summary</h4>
+						<ul style="margin-right: 12%;">
+							<li>Cart Sub Total <span>&#8377; {{subToatal}}</span></li>
+							<li>Total Tax <span>&#8377; {{total*0}}</span></li>
+							<div *ngIf="ship; then thenBlock1 "></div>
+							<ng-template #thenBlock1>
+								<li>Shipping Cost <span>&#8377; {{ship}}</span></li>
+							</ng-template>
+							<li>Total <span>&#8377; {{total+total*0+0}}</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

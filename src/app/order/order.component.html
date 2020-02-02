@@ -1,0 +1,75 @@
+<div class="container text-center">
+<div class="row">
+<div class="col-sm-2">
+</div>
+<div class="col-sm-8">
+	<form ngNativeValidate #orderDetails = "ngForm" (ngSubmit) = "onClickSubmit(order_Id)">
+		<input style='border-radius:15px;width:390px;text-align:center;' required type="text" name="order_Id" placeholder="Enter the Order Id" [(ngModel)]="order_Id">
+		<input style="background-color: #FE980F;width:90px;height:32px;margin-left:15px;border-radius:15px;" type = "submit" value = "Submit">
+	</form>
+</div>
+<div class="col-sm-2">
+</div>
+</div>
+<div class="row">
+		<div class="col-sm-2">
+			</div>
+		<div class="content-404 col-sm-8" >
+
+			<div class="table-responsive cart_info" style='padding-top:25px;'>
+				<div *ngIf="res; then thenBlock "></div>
+				<ng-template #thenBlock><table class="table table-condensed" >
+				 <tr>
+   					 <th>Name:</th>
+   					 <td>{{nm}}</td>
+ 				 </tr>
+				 <tr>
+   					 <th>Billing Amount:</th>
+   					 <td>&#8377; {{amt}}</td>
+ 				 </tr>
+				 <tr>
+   					 <th>Transaction Status:</th>
+   					 <td>{{status}}</td>
+				  </tr>
+				  <tr>
+					<th>Transaction Status Message:</th>
+					<td>{{status_msg}}</td>
+			  	</tr>
+				 <tr>
+   					 <th>Order Id:</th>
+   					 <td>{{orderId}}</td>
+ 				 </tr>
+				 <tr>
+   					 <th>Customer Id:</th>
+   					 <td>{{cusId}}</td>
+ 				 </tr>
+				 <tr>
+   					 <th>Address :</th>
+   					 <td>{{address}}</td>
+ 				 </tr>
+				 <tr>
+   					 <th>Phone :</th>
+   					 <td>{{phone}}</td>
+ 				 </tr>
+				 <tr>
+   					 <th>Email :</th>
+   					 <td>{{email}}</td>
+ 				 </tr>
+<tr>
+<th class="text-center">Product</th>
+<th class="text-center">Quantity</th>
+</tr>
+
+<tr *ngFor="let user of items">
+<td>{{user.Item}}</td>
+<td>{{user.Quantity}}</td>
+</tr>
+
+				</table></ng-template>
+		
+</div>
+</div>
+<div class="col-sm-2">
+	</div>
+</div>
+</div>

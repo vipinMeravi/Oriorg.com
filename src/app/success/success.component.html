@@ -1,0 +1,72 @@
+<div class="container text-center">
+		<div class="logo-404">
+			<a routerLink="/home"></a>
+		</div>
+		<div class="content-404" >
+			<h1><b>Thanks</b> For Your Trust</h1>
+			<p>Please Check your Transaction Status and ,Please note down your Order Id for further queries.</p>
+		<div class="col-sm-2">
+			</div>
+			<div class="table-responsive cart_info col-sm-8">
+				<div *ngIf="res; then thenBlock "></div>
+				<ng-template #thenBlock><table class="table table-condensed">
+				 <tr>
+   					 <th>Name:</th>
+   					 <td>{{nm}}</td>
+ 				 </tr>
+				 <tr>
+   					 <th>Billing Amount:</th>
+   					 <td>&#8377; {{amt}}</td>
+ 				 </tr>
+				 <tr>
+   					 <th>Order Id:</th>
+   					 <td>{{orderId}}</td>
+ 				 </tr>
+				 <tr>
+   					 <th>Transaction Status:</th>
+   					 <td>{{status}}</td>
+				  </tr>
+				  <tr>
+					<th>Transaction Status Message:</th>
+					<td>{{status_msg}}</td>
+			  	</tr>
+				 <tr>
+   					 <th>Customer Id:</th>
+   					 <td>{{cusId}}</td>
+ 				 </tr>
+				 <tr>
+   					 <th>Address :</th>
+   					 <td>{{address}}</td>
+ 				 </tr>
+				 <tr>
+   					 <th>Phone :</th>
+   					 <td>{{phone}}</td>
+ 				 </tr>
+				 <tr>
+   					 <th>Email :</th>
+   					 <td>{{email}}</td>
+				  </tr>
+				  <tr>
+					<th class="text-center">Product</th>
+					<th class="text-center">Quantity</th>
+					</tr>
+					
+					<tr *ngFor="let user of items">
+					<td>{{user.Item}}</td>
+					<td>{{user.Quantity}}</td>
+					</tr>
+				</table></ng-template>
+			</div>
+		<div class="col-sm-2">
+			</div>
+		<h2><a routerLink="/home">Bring me back Home</a></h2>
+		</div>
+</div>
+
+
+
+
+
+
+
+
