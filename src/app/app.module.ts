@@ -41,6 +41,9 @@ import { Product11Component } from './product11/product11.component';
 import { ExtraVirginCoconutHairOilComponent } from './extra-virgin-coconut-hair-oil/extra-virgin-coconut-hair-oil.component';
 import { ColdPressedCoconutHairOilComponent } from './cold-pressed-coconut-hair-oil/cold-pressed-coconut-hair-oil.component';
 import { IndoreSevComponent } from './indore-sev/indore-sev.component';
+import { ColdPressedSunflowerOilComponent } from './cold-pressed-sunflower-oil/cold-pressed-sunflower-oil.component';
+import { ColdPressedSesameOilComponent } from './cold-pressed-sesame-oil/cold-pressed-sesame-oil.component';
+import { ColdPressedFlaxseedOilComponent } from './cold-pressed-flaxseed-oil/cold-pressed-flaxseed-oil.component';
 
 @NgModule({
    declarations: [
@@ -74,7 +77,10 @@ import { IndoreSevComponent } from './indore-sev/indore-sev.component';
       Product11Component,
       ExtraVirginCoconutHairOilComponent,
       ColdPressedCoconutHairOilComponent,
-      IndoreSevComponent
+      IndoreSevComponent,
+      ColdPressedSunflowerOilComponent,
+      ColdPressedSesameOilComponent,
+      ColdPressedFlaxseedOilComponent,
    ],
    imports: [
       BrowserModule,
@@ -140,6 +146,15 @@ import { IndoreSevComponent } from './indore-sev/indore-sev.component';
       }, {
          path: 'indoriSev',
          component: IndoreSevComponent
+      }, {
+         path: 'sunflowerOil',
+         component: ColdPressedSunflowerOilComponent
+      }, {
+         path: 'sesameOil',
+         component: ColdPressedSesameOilComponent
+      }, {
+         path: 'flaxseedOil',
+         component: ColdPressedFlaxseedOilComponent
       }, {
          path: 'cart',
          component: CartComponent
